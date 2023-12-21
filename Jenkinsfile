@@ -8,12 +8,12 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('step 2') {
       steps {
         sh '''if grep -q "0" /tmp/user; then
-    echo "Le fichier /tmp/user contient \'0\'."
+    find / -user user
 else
-    echo "Le fichier /tmp/user ne contient pas \'0\'."
+    echo "user n\'existe pas."
 fi'''
       }
     }
