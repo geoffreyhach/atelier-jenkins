@@ -3,8 +3,9 @@ pipeline {
   stages {
     stage('step 1') {
       steps {
-        sh '''sh \'date\'
-sh \'mkdir F1\''''
+        sh '''sh \'grep -q "^user:" /etc/passwd > /tmp/user\'
+sh \'/tmp/user\'
+'''
       }
     }
 
