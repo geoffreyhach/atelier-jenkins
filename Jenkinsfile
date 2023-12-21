@@ -8,5 +8,15 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        sh '''if grep -q "0" /tmp/user; then
+    echo "Le fichier /tmp/user contient \'0\'."
+else
+    echo "Le fichier /tmp/user ne contient pas \'0\'."
+fi'''
+      }
+    }
+
   }
 }
