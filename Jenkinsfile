@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('step 1') {
       steps {
-        sh '''sh \'grep -q "^user:" /etc/passwd > /tmp/user\'
-sh \'/tmp/user\'
+        sh '''grep -q \'^user:\' /etc/passwd > /tmp/user
+cat /tmp/user
 '''
       }
     }
